@@ -1,0 +1,12 @@
+
+.sticky-container {
+    position: sticky;
+    top: 2px;
+    padding: 3px;
+    padding-left: 20px;
+    background-color: #0000;
+    border: 0px solid #0000;
+    border-radius: 0px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
