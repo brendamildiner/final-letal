@@ -1,14 +1,14 @@
-import { section } from 'framer-motion/client';
 import React, { useEffect, useRef } from 'react';
 import YouTube from 'react-youtube';
 
 const VideoComponent = () => {
-  const videoRef = useRef();
+  const containerRef = useRef(null); // Contenedor del video
+  const playerRef = useRef(null); // Referencia al reproductor interno
 
   useEffect(() => {
     const handlePlay = () => {
-      if (videoRef.current) {
-        videoRef.current.internalPlayer.playVideo();
+      if (playerRef.current) {
+        playerRef.current.internalPlayer.playVideo();
       }
     };
 
@@ -18,41 +18,43 @@ const VideoComponent = () => {
           handlePlay();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0}
     );
 
-    if (videoRef.current && videoRef.current.container) {
-      observer.observe(videoRef.current.container);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
 
     return () => {
-      if (videoRef.current && videoRef.current.container) {
-        observer.unobserve(videoRef.current.container);
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
       }
     };
   }, []);
 
   return (
-    <section className= "h-[600px]">
-  
     <div
+      ref={containerRef}
       style={{
         width: '50%',
         float: 'left',
-        height: '100%', // Altura personalizada del contenedor
-        margin: '50px', // Márgenes personalizados
+        height: '100%',
+        margin: '50px',
       }}
     >
       <YouTube
         videoId="jAa58N4Jlos"
-        ref={videoRef}
+        ref={playerRef}
         opts={{
           width: '800px',
-          height: '500px', // Asegura que el video ocupe toda la altura del contenedor
+          height: '500px',
+          playerVars: {
+            autoplay: 0, 
+            mute: 1
+          },
         }}
       />
     </div>
-    </section>
   );
 };
 

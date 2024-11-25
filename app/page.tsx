@@ -16,7 +16,7 @@ import FlourishV5 from '@/app/componentes/componente5';
 import FlourishV6 from '@/app/componentes/componente6';
 import FlourishV7 from '@/app/componentes/componente7';
 import FlourishV8 from '@/app/componentes/componente8';
-
+import GasesParallax from '@/app/componentes/GasesParallax';
 
 
 
@@ -332,43 +332,11 @@ const AttentionPoster: React.FC = () => {
 
         {/*///////// GASES //////////////*/}
         {/* Contenedor de los gases */}
-        <section className="h-[600px] sticky top-0">
+        <section className=" sticky top-0">
 
-          <div className="justify-left items-left h-[600px] mt-20 mx-20 z-50">
+          <div className="justify-left items-left mt-20 mx-20 z-50">
 
-            <ParallaxProvider>
-
-              <Parallax speed={0}>
-
-                <Image
-                  src="/gasesitos_1.svg"
-                  alt="gases base"
-                  width={800}
-                  height={100}
-                  className={`absolute transition-opacity duration-50 ${showGases ? 'opacity-100' : 'opacity-0'}`}
-                />
-
-                <Image
-                  src="/gasesitos_2.svg"
-                  alt="gases capa 2"
-                  width={800}
-                  height={100}
-                  className={`absolute transition-opacity duration-50 ${scrollY > 1500 && showGases ? 'opacity-100' : 'opacity-0'}`}
-                />
-
-
-                <Image
-                  src="/gasesitos_3.svg"
-                  alt="gases capa 3"
-                  width={800}
-                  height={100}
-                  className={`absolute transition-opacity duration-50 ${scrollY > 2200 && showGases ? 'opacity-100' : 'opacity-0'}`}
-                />
-
-
-              </Parallax>
-
-            </ParallaxProvider>
+            <GasesParallax />
 
           </div>
 
@@ -380,7 +348,7 @@ const AttentionPoster: React.FC = () => {
 
           <ParallaxProvider>
 
-            <Parallax speed={1}>
+            <Parallax speed={-10}>
               <div className='absolute right-4 h-[600px] w-[600px] flex items-start px-4'>
 
             <h3 className="max-w-1xl leading-relaxed font-protest-guerrilla text-[#D9D9D9] text-left text-2xl font-bold my-20 ml-[45px] textStyle">
@@ -403,7 +371,7 @@ const AttentionPoster: React.FC = () => {
 
           <ParallaxProvider>
 
-            <Parallax speed={1}>
+            <Parallax speed={-10}>
               <div className='absolute right-4 w-[600px] flex items-start px-4'>
 
               <h3 className="max-w-1xl leading-relaxed font-protest-guerrilla uppercase text-[#D9D9D9] text-left text-2xl font-bold my-20 ml-[45px] textStyle">
@@ -426,7 +394,7 @@ const AttentionPoster: React.FC = () => {
 
           <ParallaxProvider>
 
-            <Parallax speed={1}>
+            <Parallax speed={-10}>
               <div className='absolute right-4 h-[600px] w-[600px] flex items-start px-4'>
 
               <h3 className="max-w-1xl leading-relaxed font-protest-guerrilla uppercase text-[#D9D9D9] text-left text-2xl font-bold my-20 ml-[45px] textStyle">
@@ -576,7 +544,7 @@ const AttentionPoster: React.FC = () => {
 
                 <section className="h-[600px]">
 
-                  <h2 className="font-coda text-left leading-relaxed text-white text-lg leading-relaxed">
+                  <h2 className="font-coda text-left text-white text-lg leading-relaxed">
                     Entre 1970 y 1980, <span className="bg-[#fff995] text-black px-1 py-0.5 mx-1">Estados Unidos</span> lideraba en emisiones de CO₂ gracias a su industrialización y consumo de combustibles fósiles. <span className="bg-[#fffb00] text-black px-1 py-0.5 mx-1">La Unión Soviética</span> también presentaba altas emisiones, mientras que <span className="bg-[#b51a00] px-1 py-0.5 mx-1">China</span> e <span className="bg-[#ff2600] px-1 py-0.5 mx-1">India</span> contribuían poco debido a su limitada industrialización en esta etapa.
                   </h2>
 
@@ -584,7 +552,7 @@ const AttentionPoster: React.FC = () => {
 
                 <section className="h-[600px]">
 
-                  <h2 className="font-coda text-left leading-relaxed text-white text-lg leading-relaxed">
+                  <h2 className="font-coda text-left text-white text-lg leading-relaxed">
                     Entre 1980 y 1990, <span className="bg-[#fff995] text-black px-1 py-0.5 mx-1">Estados Unidos</span> mantuvo el liderazgo en emisiones, aunque comenzaba a estabilizarse. <span className="bg-[#fffb00] text-black px-1 py-0.5 mx-1">La Unión Soviética</span> tenía altos niveles de CO₂ por su industria pesada, mientras Europa Occidental iniciaba políticas de reducción de emisiones. <span className="bg-[#b51a00] px-1 py-0.5 mx-1">China</span> empezaba a crecer, pero aún en niveles bajos.
                   </h2>
 
@@ -592,7 +560,7 @@ const AttentionPoster: React.FC = () => {
 
                 <section className="h-[600px]">
 
-                  <h2 className="font-coda text-left leading-relaxed text-white text-lg leading-relaxed">
+                  <h2 className="font-coda text-left text-white text-lg leading-relaxed">
                     Entre 1990 y 2000, <span className="bg-[#b51a00] px-1 py-0.5 mx-1">China</span> aumentó notablemente sus emisiones al consolidarse como potencia manufacturera. Mientras, las emisiones de <span className="bg-[#fff995] text-black px-1 py-0.5 mx-1">Estados Unidos</span> y <span className="bg-[#fffb00] text-black px-1 py-0.5 mx-1">Rusia</span> se mantuvieron estables y la última profundizó sus políticas ambientales, logrando una reducción progresiva.
                   </h2>
 
@@ -600,7 +568,7 @@ const AttentionPoster: React.FC = () => {
 
                 <section className="h-[600px]">
 
-                  <h2 className="font-coda text-left leading-relaxed text-white text-lg leading-relaxed">
+                  <h2 className="font-coda text-left text-white text-lg leading-relaxed">
                     Entre 2000 y 2010, <span className="bg-[#b51a00] px-1 py-0.5 mx-1">China</span> superó a Estados Unidos en emisiones debido a su expansión industrial y uso intensivo de carbón. <span className="bg-[#fff995] text-black px-1 py-0.5 mx-1">Estados Unidos</span> mostró una leve baja, <span className="bg-[#fffb00] text-black px-1 py-0.5 mx-1">Rusia</span> continuó su descenso, y las emisiones de <span className="bg-[#ff2600] px-1 py-0.5 mx-1">India</span> aumentaron con su crecimiento económico.
                   </h2>
 
@@ -713,8 +681,6 @@ const AttentionPoster: React.FC = () => {
                   <p className="text-[#D9D9D9] text-lg leading-relaxed" style={{ marginTop: '50px', marginBottom: '90px' }}>
                     “Un grupo de científicos advierten que en 2025 los daños por las emisiones de CO2 serán <span className="bg-yellow-400 text-black px-1">irreversibles</span> y desencadenarán el principio del fin del mundo” - Diario El Crosinta
                   </p>
-
-
 
                 </div>
               </div>
